@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "SimpleVercelApi.csproj",
+      "use": "@vercel/dotnet"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "SimpleVercelApi.dll"
+    }
+  ]
+}
