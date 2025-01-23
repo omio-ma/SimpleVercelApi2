@@ -2,13 +2,16 @@
   "builds": [
     {
       "src": "SimpleVercelApi.csproj",
-      "use": "@vercel/dotnet"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "output"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "SimpleVercelApi.dll"
+      "src": "/(.*)",
+      "dest": "output/SimpleVercelApi.dll"
     }
   ]
 }
